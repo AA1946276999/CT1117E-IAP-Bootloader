@@ -1,6 +1,9 @@
 # STM32G431 串口 IAP 在线升级系统
 
 基于 **STM32G431RBT6** 的串口在线升级（IAP, In-Application Programming）系统。板子上电后由 Bootloader 决定进入 App 或进入升级模式，通过 **USART2**（可外接蓝牙/2.4G 无线模块）接收 PC 上位机发送的固件，写入 Flash 后跳转运行。
+1.自创建工程需要修改#define VECT_TAB_OFFSET  0x4000
+2.IROM1:0x8004000   0x1C000
+3.可以直接用DAP直接下载，Bootloader不会被覆盖。
 
 ## 特性
 
